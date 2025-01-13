@@ -1,9 +1,8 @@
 import numpy as np
 import tensorflow as tf
 from keras.saving import register_keras_serializable
-from keras.src.layers.pooling.base_pooling1d import Pooling1D
-from keras.src.layers.pooling.base_pooling2d import Pooling2D
-from keras.src.utils import conv_utils
+from keras.src.layers.pooling.base_pooling import BasePooling
+from tensorflow.python.keras.utils import conv_utils
 
 from ..utils import apf_to_tuple, tuple_to_apf
 from .base import ABSBaseLayer
@@ -111,7 +110,7 @@ class PConcatenate(tf.keras.layers.Concatenate, PLayerBase):
 
 
 @register_keras_serializable(package="HGQ")
-class PPool2D(PLayerBase, Pooling2D):
+class PPool2D(PLayerBase, BasePooling):
 
     def build(self, input_shape):
         super().build(input_shape)
@@ -129,7 +128,7 @@ class PPool2D(PLayerBase, Pooling2D):
 
 
 @register_keras_serializable(package="HGQ")
-class PPool1D(PLayerBase, Pooling1D):
+class PPool1D(PLayerBase, BasePooling):
 
     def build(self, input_shape):
         super().build(input_shape)

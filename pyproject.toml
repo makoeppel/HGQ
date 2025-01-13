@@ -19,7 +19,7 @@ classifiers = [
   "Development Status :: 5 - Production/Stable",
 ]
 
-dependencies = ['tensorflow>=2.13', 'numpy>=1.23', 'keras<3']
+dependencies = ['tensorflow>=2.13', 'numpy>=1.23', 'keras<=3.8.0']
 
 [project.urls]
 repository = "https://github.com/calad0i/HGQ"

@@ -5,8 +5,8 @@ from typing import Any
 
 import numpy as np
 import tensorflow as tf
-from keras.src.engine.keras_tensor import KerasTensor
-from keras.src.engine.node import Node
+from keras.src.backend import KerasTensor
+from tensorflow.python.keras.engine.node import Node
 from tensorflow import keras
 
 from ..layers import HLayerBase, HQuantize, PDropout, PLayerBase, Signature

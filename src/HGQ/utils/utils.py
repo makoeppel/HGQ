@@ -6,7 +6,7 @@ import tensorflow as tf
 
 
 @keras.utils.register_keras_serializable(package='HGQ')
-class MonoL1:
+class MonoL1(tf.keras.regularizers.Regularizer):
     def __init__(self, l1=0.):
         assert l1 >= 0, f'l1 must be non-negative, got {l1}'
         self.l1 = l1

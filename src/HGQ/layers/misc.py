@@ -3,7 +3,7 @@ from collections.abc import Callable
 import tensorflow as tf
 from keras import activations
 from keras.saving import register_keras_serializable
-from keras.src.layers.merging.base_merge import _Merge
+from keras.src.layers.merging.base_merge import Merge
 from tensorflow.python.ops.nn_ops import leaky_relu, relu6
 
 from ..layers.base import HLayerBase
@@ -59,7 +59,7 @@ class HActivation(HLayerBase, tf.keras.layers.Activation):
 
 
 @register_keras_serializable(package="HGQ")
-class HAdd(HLayerBase, _Merge):
+class HAdd(HLayerBase, Merge):
 
     @tf.function(jit_compile=True)
     def forward(self, inputs, training=None, record_minmax=None):
@@ -70,7 +70,7 @@ class HAdd(HLayerBase, _Merge):
         return input_shape[0]
 
 
-# class HMultply(HLayerBase, _Merge):
+# class HMultply(HLayerBase, Merge):
 
 #     @tf.function(jit_compile=True)
 #     def forward(self, inputs, training=None, record_minmax=None):

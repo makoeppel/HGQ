@@ -2,7 +2,7 @@ from functools import partialmethod
 
 import tensorflow as tf
 from keras.saving import register_keras_serializable
-from keras.src.layers.convolutional.base_conv import Conv
+from keras.src.layers.convolutional.conv1d import Conv1D as Conv
 
 from ..utils import warn
 from .base import HLayerBase

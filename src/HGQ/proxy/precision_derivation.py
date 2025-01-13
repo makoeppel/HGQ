@@ -4,10 +4,7 @@ from functools import singledispatch
 import numpy as np
 import tensorflow as tf
 from keras.layers import AvgPool1D, AvgPool2D, AvgPool3D, Concatenate, Flatten, MaxPool1D, MaxPool2D, MaxPool3D, Permute, Reshape
-from keras.src.layers.convolutional.base_conv import Conv
-from keras.src.layers.pooling.base_pooling1d import Pooling1D
-from keras.src.layers.pooling.base_pooling2d import Pooling2D
-from keras.src.layers.pooling.base_pooling3d import Pooling3D
+from keras.src.layers.convolutional.conv1d import Conv1D as Conv
 from tensorflow import keras
 
 from ..utils import apf_to_tuple, tuple_to_apf, warn
